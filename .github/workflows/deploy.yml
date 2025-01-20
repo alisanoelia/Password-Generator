@@ -1,10 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every vez que hagas push a la rama `master`.
+  # Trigger el flujo de trabajo cada vez que hagas push a la rama `master`.
   push:
     branches: [master]
-  # Permite ejecutar este flujo de trabajo manualmente desde la pestaña Actions en GitHub.
+  # Permite ejecutar el flujo de trabajo manualmente desde la pestaña Actions en GitHub.
   workflow_dispatch:
 
 # Permisos necesarios para clonar el repositorio y realizar el despliegue.
@@ -30,6 +30,12 @@ jobs:
 
       - name: Build your site
         run: pnpm build
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: dist # Cambia "dist" al directorio de salida de tu build si es diferente.
 
   deploy:
     needs: build
