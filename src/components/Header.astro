@@ -1,0 +1,12 @@
+---
+import { ToggleTheme } from '@components/ToggleTheme'
+
+const { title } = Astro.props
+---
+
+<header
+	class="flex items-center justify-between bg-orange-50 p-4 text-center text-black/60 dark:bg-zinc-900 dark:text-white/60"
+>
+	<h1 class="text-xl font-bold">{title}</h1>
+	<ToggleTheme client:load />
+</header>

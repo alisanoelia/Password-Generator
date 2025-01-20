@@ -1,0 +1,12 @@
+---
+interface LinkProps {
+	title: string
+	href: string
+}
+
+const { title, href } = Astro.props as LinkProps
+---
+
+<a href={href} class="underline decoration-current underline-offset-8"
+	>{title}</a
+>
