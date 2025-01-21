@@ -8,6 +8,8 @@
 		"dist"
 	],
 	"compilerOptions": {
+		"module": "ESNext",
+		"strict": true,
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
 		"baseUrl": ".",
